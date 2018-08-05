@@ -25,12 +25,12 @@
     data () {
       return {
         image: null,
-        title: "",
-        description: "",
-        release_date: "",
+        title: '',
+        description: '',
+        release_date: '',
         author: {
-          first_name: "",
-          last_name: "",
+          first_name: '',
+          last_name: '',
         },
         body: [],
       }
@@ -53,7 +53,7 @@
           },
           {
             name: 'og:image',
-            content: this.image.url
+            content: this.image ? this.image.url : '',
           }
         ]
       }

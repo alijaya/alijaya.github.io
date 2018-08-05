@@ -4,12 +4,8 @@ import Meta from 'vue-meta'
 
 import Home from '@/views/Home'
 import About from '@/views/About'
-import CustomersHome from '@/views/CustomersHome'
-import CustomerPage from '@/views/CustomerPage'
-import FAQ from '@/views/FAQ'
 import BlogHome from '@/views/BlogHome'
 import BlogPost from '@/views/BlogPost'
-import RssAtomSitemap from '@/views/RssAtomSitemap'
 
 Vue.use(Router)
 Vue.use(Meta)
@@ -27,21 +23,6 @@ export default new Router({
       component: About
     },
     {
-      path: '/customers/',
-      name: 'customers-home',
-      component: CustomersHome
-    },
-    {
-      path: '/customers/:uid',
-      name: 'customer-page',
-      component: CustomerPage
-    },
-    {
-      path: '/faq',
-      name: 'faq',
-      component: FAQ
-    },
-    {
       path: '/blog/',
       name: 'blog-home',
       component: BlogHome
@@ -51,10 +32,5 @@ export default new Router({
       name: 'blog-post',
       component: BlogPost
     },
-    {
-      path: '/rss',
-      name: 'rss',
-      component: RssAtomSitemap
-    }
   ]
 })
