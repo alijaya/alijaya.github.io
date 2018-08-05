@@ -29,7 +29,7 @@ export default new Router({
       component: CustomersHome
     },
     {
-      path: '/customers/:slug',
+      path: '/customers/:uid',
       name: 'customer-page',
       component: CustomerPage
     },
@@ -44,7 +44,7 @@ export default new Router({
       component: BlogHome
     },
     {
-      path: '/blog/:slug',
+      path: '/blog/:uid',
       name: 'blog-post',
       component: BlogPost
     },
