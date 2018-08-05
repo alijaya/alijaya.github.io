@@ -2,6 +2,10 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
+      <router-link to="/blog">Blog</router-link> |
+      <router-link to="/customers">Customers</router-link> |
+      <router-link to="/faq">FAQ</router-link> |
+      <router-link to="/rss">RSS</router-link> |
       <router-link to="/about">About</router-link>
     </div>
     <router-view/>
