@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Meta from 'vue-meta'
+
 import Home from '@/views/Home'
 import About from '@/views/About'
 import CustomersHome from '@/views/CustomersHome'
@@ -10,6 +12,7 @@ import BlogPost from '@/views/BlogPost'
 import RssAtomSitemap from '@/views/RssAtomSitemap'
 
 Vue.use(Router)
+Vue.use(Meta)
 
 export default new Router({
   routes: [

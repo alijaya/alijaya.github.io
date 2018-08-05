@@ -22,16 +22,40 @@
 <script>
   export default {
     name: 'blog-post',
-    data() {
+    data () {
       return {
         image: null,
         title: "",
+        description: "",
         release_date: "",
         author: {
           first_name: "",
           last_name: "",
         },
         body: [],
+      }
+    },
+    metaInfo () {
+      return {
+        title: this.title,
+        meta: [
+          {
+            name: 'description',
+            content: this.description,
+          },
+          {
+            name: 'og:title',
+            content: this.title,
+          },
+          {
+            name: 'og:description',
+            content: this.description,
+          },
+          {
+            name: 'og:image',
+            content: this.image.url
+          }
+        ]
       }
     },
     beforeRouteUpdate (to, from, next) {
@@ -49,6 +73,7 @@
           console.log(response)
           this.image = response.data.image
           this.title = response.data.title
+          this.description = this.$prismic.richTextAsPlain(response.data.description)
           this.release_date = response.data.release_date
           this.author.first_name = response.data.author.data.first_name
           this.author.last_name = response.data.author.data.last_name
