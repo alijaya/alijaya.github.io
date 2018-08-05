@@ -1,0 +1,124 @@
+{
+	fire : {
+		emitter : "fire"
+	}
+	water : {
+		emitter : "water"
+	}
+	earth : {
+		emitter : "earth"
+		lock : true
+	}
+	air : {
+		emitter : "air"
+	}
+	energy : {
+		emitter : "energy"
+		lock : true
+	}
+	sand : {
+		emitter : "sand"
+	}
+	dust : {
+		emitter : "dust"
+	}
+	wind : {
+		emitter : "wind"
+	}
+	smoke : {
+		emitter : "smoke"
+	}
+	prism : {
+		emitter : "prism"
+	}
+	bubble : {
+		emitter : "bubble"
+	}
+	void : {
+		emitter : "void"
+		lock : true
+	}
+	mud : {
+		emitter : "mud"
+	}
+	light : {
+		emitter : "light"
+		lock : true
+	}
+	red : {
+		emitter : "red"
+		lock : true
+	}
+	green : {
+		emitter : "green"
+		lock : true
+	}
+	blue : {
+		emitter : "blue"
+		lock : true
+	}
+	yellow : {
+		emitter : "yellow"
+		lock : true
+	}
+	cyan : {
+		emitter : "cyan"
+		lock : true
+	}
+	magenta : {
+		emitter : "magenta"
+		lock : true
+	}
+	white : {
+		emitter : "white"
+		lock : true
+	}
+	soap : {
+		emitter : "soap"
+	}
+	campfire : {
+		emitter : "campfire"
+	}
+	cloud : {
+		emitter : "cloud"
+		lock : true
+	}
+	explosion : {
+		emitter : "explosion"
+	}
+	steam : {
+		emitter : "steam"
+	}
+	rain : {
+		emitter : "rain"
+	}
+	sea : {
+		emitter : "sea"
+		lock : true
+	}
+	ray : {
+		emitter : "ray"
+	}
+	star : {
+		emitter : "star"
+	}
+	launch : {
+		emitter : "launch"
+	}
+	leaf : {
+		emitter : "leaf"
+	}
+	poison : {
+		emitter : "poison"
+	}
+	ringfire : {
+		emitter : "ringfire"
+	}
+	rose : {
+		emitter : "rose"
+		lock : true
+	}
+	bacteria : {
+		emitter : "bacteria"
+	}
+}
