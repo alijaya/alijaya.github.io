@@ -1,12 +1,29 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/blog">Blog</router-link>
+      <el-menu :default-active="activeIndex" router mode="horizontal">
+        <el-menu-item index="/">Home</el-menu-item>
+        <el-menu-item index="/blog">Blog</el-menu-item>
+      </el-menu>
     </div>
     <router-view/>
   </div>
 </template>
+
+<script>
+  export default {
+    name: 'app',
+    data () {
+      return {
+        activeIndex: '/'
+      }
+    },
+    created () {
+      this.activeIndex = '/' + this.$route.path.split('/')[0]
+      console.log(this.activeIndex)
+    }
+  }
+</script>
 
 <style>
 #app {
