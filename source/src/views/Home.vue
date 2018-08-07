@@ -5,13 +5,15 @@
 </template>
 
 <script>
-// @ is an alias to /src
 
 export default {
   name: 'home',
   data() {
     return {
     }
+  },
+  metaInfo: {
+    title: 'Home',
   },
   created() {
     this.getContent()
@@ -22,4 +24,5 @@ export default {
     }
   }
 }
+
 </script>

@@ -1,9 +1,18 @@
 import prismicDOM from 'prismic-dom'
 import linkResolver from '@/prismic/link-resolver'
+import footnote from '@/js/footnote'
 
 const Elements = prismicDOM.RichText.Elements
 
 export default function (type, element, content, children) {
+  const childrenJoin = children.join('')
+
+  if (type === Elements.label) {
+    if (element.data.label === 'footnote') {
+      return `<el-popover><el-badge slot="reference" value="${footnote.nextId()}" class="popover"/><span class="footnote">${childrenJoin}</span></el-popover>`
+    }
+  }
+
   // Generate links to Prismic Documents as <router-link> components
   // Present by default, it is recommended to keep this
   if (type === Elements.hyperlink) {

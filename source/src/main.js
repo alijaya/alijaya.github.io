@@ -9,6 +9,8 @@ import htmlSerializer from '@/prismic/html-serializer'
 import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
+import VueMarkdown from 'vue-markdown'
+
 Vue.config.productionTip = false
 
 Vue.use(PrismicVue, {
@@ -18,6 +20,8 @@ Vue.use(PrismicVue, {
 })
 
 Vue.use(Element)
+
+Vue.component('vue-markdown', VueMarkdown)
 
 new Vue({
   router,
