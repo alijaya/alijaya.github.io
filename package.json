@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "moment": "^2.22.2",
+    "vue-markdown": "^2.2.4"
+  }
+}
