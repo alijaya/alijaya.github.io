@@ -12,12 +12,6 @@
       }
     </script>
     <script src="https://static.cdn.prismic.io/prismic.min.js"></script>
-
-    <style type="text/css">
-      body:before {
-        content: attr(message);
-      }
-    </style>
   </head>
   <body>
 
@@ -27,12 +21,6 @@
         delete sessionStorage.redirect;
         if (redirect && redirect != location.href) {
           history.replaceState(null, null, redirect);
-          // REMOVE THIS - just showing the redirect route in the UI
-          document.body.setAttribute('message', 'This page was redirected by 404.html, from the route: ' + redirect);
-        }
-        else {
-          // REMOVE THIS - just showing the redirect route in the UI
-          document.body.setAttribute('message', 'This page was loaded directly from the index.html file');
         }
       })();
     </script>
