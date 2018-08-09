@@ -24,8 +24,7 @@ export default {
     },
     title: {
       type: String,
-      required: false,
-      default: undefined,
+      required: true,
     },
     category_id: {
       type: String,
@@ -53,18 +52,14 @@ export default {
       default: undefined,
     }
   },
-  watch: {
-    shortname () {
-      this.resetInstance()
-    }
-  },
   created () {
     this.$watch(
-      (vm) => (vm.identifier, vm.url, vm.title, vm.category_id, vm.remote_auth_s3, vm.api_key, vm.sso_config, vm.language, Date.now()),
-      this.updateConfig.bind(this)
+      (vm) => (vm.shortname, vm.identifier, vm.url, vm.title, vm.category_id, vm.remote_auth_s3, vm.api_key, vm.sso_config, vm.language, Date.now()),
+      this.resetInstance.bind(this)
     )
   },
   mounted () {
+    console.log(this.shortname, this.identifier, this.url, this.title)
     this.resetInstance()
   },
   methods: {
@@ -96,19 +91,17 @@ export default {
 
       // load instance
 
-      if (window.DISQUS && doc.getElementById('dsq-embed-scr')) {
-        this.updateConfig()
-      } else {
-        window.disqus_config = this.getDisqusConfig()
-        insertScript(`https://${this.shortname}.disqus.com/embed.js`, 'dsq-embed-scr', doc.body)
+      if (this.shortname && this.identifier && this.url && this.title) { // only load when all is good
+        if (window.DISQUS && doc.getElementById('dsq-embed-scr')) {
+          window.DISQUS.reset({
+            reload: true,
+            config: this.getDisqusConfig()
+          })
+        } else {
+          window.disqus_config = this.getDisqusConfig()
+          insertScript(`https://${this.shortname}.disqus.com/embed.js`, 'dsq-embed-scr', doc.body)
+        }
       }
-    },
-
-    updateConfig () {
-      window.DISQUS.reset({
-        reload: true,
-        config: this.getDisqusConfig()
-      })
     },
 
     getDisqusConfig () {
@@ -124,6 +117,7 @@ export default {
         this.language = self.language
         this.callbacks.onReady = [() => self.$emit('ready')]
         this.callbacks.onNewComment = [(comment) => self.$emit('new-comment', comment)]
+        console.log(this.page)
       }
     },
   }

@@ -56,7 +56,7 @@ export default {
   name: 'blog-post',
   data () {
     return {
-      id: undefined,
+      id: '',
       image: {},
       title: '',
       description: '',
