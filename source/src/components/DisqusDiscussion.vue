@@ -16,13 +16,11 @@ export default {
     },
     identifier: {
       type: String,
-      required: false,
-      default: undefined,
+      required: true,
     },
     url: {
       type: String,
-      required: false,
-      default: undefined,
+      required: true,
     },
     title: {
       type: String,
