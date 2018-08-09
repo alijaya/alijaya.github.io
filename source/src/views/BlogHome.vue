@@ -54,7 +54,6 @@ export default {
             date: doc.first_publication_date,
           }
         })
-        console.log(this.posts)
       })
     }
   }
