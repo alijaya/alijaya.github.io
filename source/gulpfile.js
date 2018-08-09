@@ -10,7 +10,8 @@ gulp.task('clean', function() {
     '../js',
     '../fonts',
     '../favicon.ico',
-    '../index.html'
+    '../404.html',
+    '../index.html',
   ], {
     force: true // danger zone, delete outside folders
   })
