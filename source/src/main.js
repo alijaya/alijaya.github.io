@@ -7,9 +7,11 @@ import linkResolver from '@/prismic/link-resolver'
 import htmlSerializer from '@/prismic/html-serializer'
 
 import Element from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
+import '@/css/index.scss'
 
 import VueMarkdown from 'vue-markdown'
+
+import Footnote from '@/components/Footnote'
 
 Vue.config.productionTip = false
 
@@ -22,6 +24,8 @@ Vue.use(PrismicVue, {
 Vue.use(Element)
 
 Vue.component('vue-markdown', VueMarkdown)
+
+Vue.component('footnote', Footnote)
 
 new Vue({
   router,

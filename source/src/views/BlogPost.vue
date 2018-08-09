@@ -39,7 +39,8 @@
 
 <script>
 import relativeDate from '@/js/relativeDate'
-import footnote from '@/js/footnote'
+// import footnote from '@/js/footnote'
+import { resetId } from '@/components/Footnote'
 
 export default {
   name: 'blog-post',
@@ -88,7 +89,7 @@ export default {
   },
   methods: {
     getContent() {
-      footnote.resetId()
+      resetId()
       this.$prismic.client.getByUID('blog_post', this.$route.params.uid,
         { fetchLinks: ['author.first_name', 'author.last_name'] } )
       .then((response) => {

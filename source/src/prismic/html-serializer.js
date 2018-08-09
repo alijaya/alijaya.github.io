@@ -9,7 +9,7 @@ export default function (type, element, content, children) {
 
   if (type === Elements.label) {
     if (element.data.label === 'footnote') {
-      return `<el-popover><el-badge slot="reference" value="${footnote.nextId()}" class="popover"/><span class="footnote">${childrenJoin}</span></el-popover>`
+      return `<footnote>${childrenJoin}</footnote>`
     }
   }
 
