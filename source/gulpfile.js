@@ -25,5 +25,5 @@ gulp.task('copy', function() {
 });
 
 gulp.task('deploy', function(cb) {
-  runSequence('clean', 'build', 'copy', cb);
+  runSequence('build', 'clean', 'copy', cb);
 })
