@@ -3,6 +3,7 @@
     <header class="section header">
       <div class="container content">
         <prismic-image 
+          v-if="image.url"
           :field="image" 
           class="hero-image" />
         <h1>{{ title }}</h1>
@@ -56,7 +57,7 @@ export default {
   data () {
     return {
       id: undefined,
-      image: undefined,
+      image: {},
       title: '',
       description: '',
       date: '',
@@ -121,13 +122,6 @@ export default {
 </script>
 
 <style scoped>
-.section {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .header {
   margin-bottom: 1.5rem;
 }
@@ -135,11 +129,6 @@ export default {
 .hero-image {
   display: block;
   width: 100%;
-}
-
-.container {
-  width: 100%;
-  max-width: 30rem;
 }
 
 .comment {

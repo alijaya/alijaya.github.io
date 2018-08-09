@@ -126,7 +126,6 @@ export default {
         this.language = self.language
         this.callbacks.onReady = [() => self.$emit('ready')]
         this.callbacks.onNewComment = [(comment) => self.$emit('new-comment', comment)]
-        console.log(this)
       }
     },
   }

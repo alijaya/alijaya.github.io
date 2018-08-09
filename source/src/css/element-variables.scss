@@ -1,3 +1,7 @@
 $--color-primary: hsl(0, 100%, 70%);
 $--font-path: '~element-ui/lib/theme-chalk/fonts';
+$--sm: 600px;
+$--md: 900px;
+$--lg: 1200px;
+$--xl: 1800px;
 @import '~element-ui/packages/theme-chalk/src/index.scss';

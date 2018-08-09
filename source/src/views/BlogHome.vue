@@ -1,17 +1,30 @@
 <template>
   <div class="blog-home">
-    <h1>{{ page_title }}</h1>
-    <div v-for="post in posts" :key="post.uid">
-      <router-link :to="'/blog/' + post.uid">
-        <article class="media">
-          <figure>
-            <prismic-image :field="post.image" />
-          </figure>
-          <h2>{{ post.title }}</h2>
+    <header class="section header">
+      <div class="container content">
+        <h1>{{ page_title }}</h1>
+      </div>
+    </header>
+    <section class="section">
+      <article 
+        v-for="post in posts" 
+        :key="post.uid" 
+        class="media blog-list container">
+        <figure class="media-left">
+          <router-link :to="'/blog/' + post.uid">
+            <prismic-image v-if="post.image.url" :field="post.image" />
+          </router-link>
+        </figure>
+        <div class="media-content content">
+          <h5>
+            <router-link :to="'/blog/' + post.uid">
+              {{ post.title }}
+            </router-link>
+          </h5>
           <prismic-rich-text :field="post.description" />
-        </article>
-      </router-link>
-    </div>
+        </div>
+      </article>
+    </section>
   </div>
 </template>
 
@@ -60,3 +73,46 @@ export default {
 }
 
 </script>
+
+<style lang="scss" scoped>
+@import '@/css/element-variables.scss';
+
+.media.blog-list {
+  margin-bottom: 1.5rem;
+
+  .media-left {
+    width: 10rem;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@include res(xs) {
+  .media.blog-list {
+    flex-direction: column;
+    .media-left {
+      width: 100%;
+      margin: 0;
+    }
+  }
+}
+
+.section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  margin-bottom: 1.5rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 30rem;
+}
+
+</style>

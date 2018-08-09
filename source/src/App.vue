@@ -48,7 +48,16 @@ html {
 }
 
 a {
-  color: $--color-primary
+  color: $--color-primary;
+  text-decoration: none;
+
+  &:hover, &:focus {
+    color: mix($--color-white, $--color-primary, $--button-hover-tint-percent);
+  }
+
+  &:active {
+    color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+  }
 }
 
 body {
